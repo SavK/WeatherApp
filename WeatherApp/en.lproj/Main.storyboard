@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yac-JK-cP6">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3w-8p-UzA">
+                                <rect key="frame" x="100" y="732" width="214" height="30"/>
+                                <state key="normal" title="Show Weather"/>
+                                <connections>
+                                    <segue destination="NoN-hV-hEN" kind="show" id="uwC-I7-FEV"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="oqh-BH-vQe">
+                                <rect key="frame" x="0.0" y="178" width="414" height="100.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DM-Kn-Yk5">
+                                        <rect key="frame" x="10" y="0.0" width="394" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDk-OU-Kfw">
+                                        <rect key="frame" x="100" y="70.5" width="214" height="30"/>
+                                        <state key="normal" title="Detect location"/>
+                                        <connections>
+                                            <action selector="detectLocationPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tw6-Ic-UaY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3DM-Kn-Yk5" secondAttribute="trailing" constant="10" id="Ams-Le-YJn"/>
+                                    <constraint firstItem="3DM-Kn-Yk5" firstAttribute="leading" secondItem="oqh-BH-vQe" secondAttribute="leading" constant="10" id="McV-Ba-iWP"/>
+                                    <constraint firstItem="aDk-OU-Kfw" firstAttribute="leading" secondItem="oqh-BH-vQe" secondAttribute="leading" constant="100" id="faL-5P-tUi"/>
+                                    <constraint firstAttribute="trailing" secondItem="aDk-OU-Kfw" secondAttribute="trailing" constant="100" id="keH-6M-BbW"/>
+                                </constraints>
+                            </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YPl-xt-Mrw">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oqh-BH-vQe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="2TE-U2-ZPu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J3w-8p-UzA" secondAttribute="trailing" constant="100" id="Bhb-u1-zex"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oqh-BH-vQe" secondAttribute="trailing" id="Biy-l9-gfy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J3w-8p-UzA" secondAttribute="bottom" constant="100" id="Ewf-HK-9ks"/>
+                            <constraint firstItem="YPl-xt-Mrw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Zap-mU-uy0"/>
+                            <constraint firstItem="J3w-8p-UzA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="Zoc-cG-Bl1"/>
+                            <constraint firstItem="oqh-BH-vQe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fYE-yN-b8R"/>
+                            <constraint firstItem="YPl-xt-Mrw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qPt-Nt-Hji"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wxO-d4-Tgt"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="YPl-xt-Mrw" id="f6c-jw-5Lx"/>
+                        <outlet property="currentAdressLabel" destination="3DM-Kn-Yk5" id="WC8-8r-DRn"/>
+                        <outlet property="detectLocationButton" destination="aDk-OU-Kfw" id="Ojb-51-qlO"/>
+                        <outlet property="locationStackView" destination="oqh-BH-vQe" id="sGO-HP-YMZ"/>
+                        <outlet property="showWeatherButton" destination="J3w-8p-UzA" id="taa-mC-ZLU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1718.840579710145" y="126.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tQv-oK-R3V">
+            <objects>
+                <navigationController id="yac-JK-cP6" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1pp-p3-AKi"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g9W-r2-0UO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UnF-i6-19G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EEC-Mx-myD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="929" y="127"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ba2-JQ-Xgt">
+            <objects>
+                <viewController id="NoN-hV-hEN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ETc-d5-fcg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zh-wf-ANg">
+                                <rect key="frame" x="100" y="732" width="214" height="30"/>
+                                <state key="normal" title="Refresh"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3zh-wf-ANg" firstAttribute="leading" secondItem="tSQ-gD-qZR" secondAttribute="leading" constant="100" id="Wqc-pz-dgG"/>
+                            <constraint firstItem="tSQ-gD-qZR" firstAttribute="bottom" secondItem="3zh-wf-ANg" secondAttribute="bottom" constant="100" id="aMI-l7-jaA"/>
+                            <constraint firstItem="tSQ-gD-qZR" firstAttribute="trailing" secondItem="3zh-wf-ANg" secondAttribute="trailing" constant="100" id="ybO-D5-wXA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tSQ-gD-qZR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sNc-ao-Yqt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x4o-wf-MS7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2496" y="127"/>
+        </scene>
+    </scenes>
+</document>
