@@ -14,6 +14,7 @@
 		AD9F29992356F613002DA153 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD9F29982356F613002DA153 /* Assets.xcassets */; };
 		AD9F299C2356F613002DA153 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9F299A2356F613002DA153 /* LaunchScreen.storyboard */; };
 		AD9F29A42356FEEE002DA153 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9F29A32356FEEE002DA153 /* MainViewController.swift */; };
+		ADEFC813235AD977004978C8 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEFC812235AD977004978C8 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		AD9F29982356F613002DA153 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD9F299D2356F613002DA153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD9F29A32356FEEE002DA153 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		ADEFC812235AD977004978C8 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD155104235A12F50099D18B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AD9F298C2356F60B002DA153 /* AppDelegate.swift */,
+				AD9F299D2356F613002DA153 /* Info.plist */,
+				AD9F298E2356F60B002DA153 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AD155105235A13050099D18B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AD9F299A2356F613002DA153 /* LaunchScreen.storyboard */,
+				AD9F29922356F60B002DA153 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AD155106235A13150099D18B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AD9F29952356F60B002DA153 /* WeatherApp.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		AD155107235A13210099D18B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD9F29A32356FEEE002DA153 /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AD155108235A132B0099D18B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AD9F29982356F613002DA153 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		AD9F29802356F60B002DA153 = {
 			isa = PBXGroup;
 			children = (
@@ -58,16 +103,22 @@
 		AD9F298B2356F60B002DA153 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				AD9F298C2356F60B002DA153 /* AppDelegate.swift */,
-				AD9F298E2356F60B002DA153 /* SceneDelegate.swift */,
-				AD9F29922356F60B002DA153 /* Main.storyboard */,
-				AD9F29A32356FEEE002DA153 /* MainViewController.swift */,
-				AD9F29982356F613002DA153 /* Assets.xcassets */,
-				AD9F299A2356F613002DA153 /* LaunchScreen.storyboard */,
-				AD9F299D2356F613002DA153 /* Info.plist */,
-				AD9F29952356F60B002DA153 /* WeatherApp.xcdatamodeld */,
+				AD155104235A12F50099D18B /* App */,
+				AD155106235A13150099D18B /* CoreData */,
+				AD155108235A132B0099D18B /* Resources */,
+				ADEFC814235AD97D004978C8 /* Services */,
+				AD155105235A13050099D18B /* Storyboards */,
+				AD155107235A13210099D18B /* ViewControllers */,
 			);
 			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		ADEFC814235AD97D004978C8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ADEFC812235AD977004978C8 /* LocationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +193,7 @@
 			files = (
 				AD9F29972356F60B002DA153 /* WeatherApp.xcdatamodeld in Sources */,
 				AD9F298D2356F60B002DA153 /* AppDelegate.swift in Sources */,
+				ADEFC813235AD977004978C8 /* LocationService.swift in Sources */,
 				AD9F298F2356F60B002DA153 /* SceneDelegate.swift in Sources */,
 				AD9F29A42356FEEE002DA153 /* MainViewController.swift in Sources */,
 			);
@@ -289,12 +341,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ACA65937A;
-				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WeatherApp/App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = SavK.WeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -308,12 +361,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ACA65937A;
-				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WeatherApp/App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = SavK.WeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
