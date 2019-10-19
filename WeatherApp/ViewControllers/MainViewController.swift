@@ -19,18 +19,27 @@ class MainViewController: UIViewController {
     @IBOutlet private var currentAdressLabel: UILabel!
     /// Buttons
     @IBOutlet private var detectLocationButton: UIButton!
+    @IBOutlet private var historyButton: UIButton!
     @IBOutlet private var showWeatherButton: UIButton!
     
     // MARK: - Properties
     private let locationServiceDispatchGroup = DispatchGroup()
     private var locationService: LocationService?
-    private var currentLongitude = ""
-    private var currentLatitude = ""
+    
+    private var street = ""
+    private var longitude = ""
+    private var latitude = ""
     private var currentAdress = ""
+    
     private var isAdressDetected = false
     
-    
     // MARK: - UIViewController Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if #available(iOS 10.0, *) { historyButton.isHidden = false }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -60,7 +69,7 @@ class MainViewController: UIViewController {
     }
 }
 
-// MARK: - Update UI Methods
+// MARK: - UI Methods
 extension MainViewController {
     
     private func updateUI() {
@@ -106,10 +115,10 @@ extension MainViewController {
                 return
         }
         guard let location = locationService?.currentLocation else { return }
-        
-        currentLongitude = String(format: "%.4f",location.coordinate.longitude)
-        currentLatitude = String(format: "%.4f", location.coordinate.latitude)
-        
+        ///Prepare coordinates for WeatherViewController
+        longitude = String(format: "%.4f",location.coordinate.longitude)
+        latitude = String(format: "%.4f", location.coordinate.latitude)
+        /// Fetch current adress
         locationServiceDispatchGroup.enter()
         locationService?.fetchCityAndCountry(from: location) {
             [unowned self] (street, city, country, error) in
@@ -125,9 +134,21 @@ extension MainViewController {
                 self.currentAdress = "Some adress data isn't detected"
                 return
             }
-            
+            self.street = street
             self.currentAdress = street + ", " + city + ", " + country
             self.isAdressDetected = true
         }
+    }
+}
+
+// MARK: - Navigation
+extension MainViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? WeatherViewController,
+            segue.identifier == "showWeatherViewController" else { return }
+        
+        destination.street = street
+        destination.currentLatitude = latitude
+        destination.currentLongitude = longitude
     }
 }

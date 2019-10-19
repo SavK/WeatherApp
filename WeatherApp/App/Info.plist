@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en_US</string>
+	<string>en-US</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need to determine your position</string>
 	<key>CFBundleExecutable</key>

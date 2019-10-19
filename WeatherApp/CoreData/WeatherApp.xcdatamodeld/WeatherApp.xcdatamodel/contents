@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="18G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="WeatherEntity" representedClassName="WeatherEntity" syncable="YES">
+        <attribute name="city" attributeType="String"/>
+        <attribute name="requestTime" attributeType="String"/>
+        <attribute name="street" attributeType="String"/>
+        <attribute name="temperature" attributeType="Integer 64" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="WeatherEntity" positionX="-63" positionY="-18" width="128" height="103"/>
+    </elements>
 </model>

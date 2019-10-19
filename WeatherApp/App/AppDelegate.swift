@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+        if #available(iOS 10.0, *) { createContext() } else { }
+        
         return true
     }
 
@@ -30,16 +31,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
-
     @available(iOS 10.0, *)
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "WeatherApp")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
+    func createContext() {
+        let persistentContainer: NSPersistentContainer = {
+            let container = NSPersistentContainer(name: "WeatherApp")
+            container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+                if let error = error as NSError? {
+                    fatalError("Unresolved error \(error), \(error.userInfo)")
+                }
+            })
+            return container
+        }()
+        
+        ContextSingltone.shared.context = persistentContainer.viewContext
+    }
 }
 
