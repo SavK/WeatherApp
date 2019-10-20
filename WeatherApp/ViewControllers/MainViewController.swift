@@ -125,15 +125,11 @@ extension MainViewController {
             
             defer { self.locationServiceDispatchGroup.leave() }
             
-            guard error == nil else {
-                self.currentAdress = "Error: \(error!.localizedDescription)"
+            guard error == nil, let street = street, let city = city, let country = country else {
+                self.currentAdress = "Error: Address couldn't be recognized. Please check internet connection."
                 return
             }
-            
-            guard let street = street, let city = city, let country = country else {
-                self.currentAdress = "Some adress data isn't detected"
-                return
-            }
+
             self.street = street
             self.currentAdress = street + ", " + city + ", " + country
             self.isAdressDetected = true

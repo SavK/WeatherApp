@@ -56,10 +56,14 @@ class WeatherViewController: UIViewController {
 extension WeatherViewController {
     
     func updateUI() {
-        cityLabel.text = weather?.location.city
-        textLabel.text = weather?.currentObservation.condition.text
-        tempreatureLabel.text = "\(weather?.currentObservation.condition.temperature ?? 100)ºC"
-        changeElementsVisibility(if: isElementsVisible)
+        defer { changeElementsVisibility(if: isElementsVisible) }
+        guard let weather = weather else {
+            textLabel.text = "Error occured. Please check internet connection and try again."
+            return
+        }
+        cityLabel.text = weather.location.city
+        textLabel.text = weather.currentObservation.condition.text
+        tempreatureLabel.text = "\(weather.currentObservation.condition.temperature) ºC"
     }
     
     func changeElementsVisibility(if status: Bool) {
