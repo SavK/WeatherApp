@@ -94,6 +94,7 @@ extension WeatherViewController {
 }
 
 @available(iOS 10.0, *)
+// MARK: - CoreData Methods
 extension WeatherViewController {
 
     func saveToDB() {

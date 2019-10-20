@@ -8,7 +8,8 @@
 
 import OAuthSwift
 
-class YahooWeatherAPI {
+final class YahooWeatherAPI {
+    
     // Configure the following with your values.
     private let credentials = YahooWeatherAPIClientCredentials(appId: AuthenticationYahooAPIData.appId,
                                                                clientId: AuthenticationYahooAPIData.clientId,

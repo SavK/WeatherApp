@@ -110,14 +110,13 @@
             </objects>
             <point key="canvasLocation" x="1718.840579710145" y="126.5625"/>
         </scene>
-        <!--History Table View Controller-->
+        <!--History-->
         <scene sceneID="fyw-vv-E9z">
             <objects>
                 <tableViewController id="oa1-UJ-vjf" customClass="HistoryTableViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Eiu-Zj-huE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="weatherRequestCell" textLabel="zmM-fo-69d" detailTextLabel="a0t-mA-Wxk" style="IBUITableViewCellStyleSubtitle" id="21g-tz-b4a">
                                 <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
@@ -149,7 +148,7 @@
                             <outlet property="delegate" destination="oa1-UJ-vjf" id="RDI-ot-WCU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="JuE-6B-nPL"/>
+                    <navigationItem key="navigationItem" title="History" leftItemsSupplementBackButton="YES" id="JuE-6B-nPL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbc-Uv-s3o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

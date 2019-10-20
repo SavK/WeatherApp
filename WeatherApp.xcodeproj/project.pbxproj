@@ -11,6 +11,7 @@
 		AD0E9620235B915A003D7DBC /* ContextSingltone.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0E961F235B915A003D7DBC /* ContextSingltone.swift */; };
 		AD42EA61235B6261003F3211 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42EA60235B6261003F3211 /* WeatherViewController.swift */; };
 		AD42EA63235B7050003F3211 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42EA62235B7050003F3211 /* NetworkService.swift */; };
+		AD7C12CE235C39CF0072F2E4 /* UITableView+EmptyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C12CD235C39CF0072F2E4 /* UITableView+EmptyMessage.swift */; };
 		AD7E3A7C235B474000646BC0 /* YahooWeatherAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E3A7B235B474000646BC0 /* YahooWeatherAPIService.swift */; };
 		AD7E3A7E235B47A500646BC0 /* YahooWeatherAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E3A7D235B47A500646BC0 /* YahooWeatherAPIModel.swift */; };
 		AD7E3A82235B490B00646BC0 /* AuthenticationYahooAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E3A81235B490B00646BC0 /* AuthenticationYahooAPIData.swift */; };
@@ -37,6 +38,7 @@
 		AD42EA5D235B602C003F3211 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD42EA60235B6261003F3211 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		AD42EA62235B7050003F3211 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AD7C12CD235C39CF0072F2E4 /* UITableView+EmptyMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyMessage.swift"; sourceTree = "<group>"; };
 		AD7E3A7B235B474000646BC0 /* YahooWeatherAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahooWeatherAPIService.swift; sourceTree = "<group>"; };
 		AD7E3A7D235B47A500646BC0 /* YahooWeatherAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahooWeatherAPIModel.swift; sourceTree = "<group>"; };
 		AD7E3A81235B490B00646BC0 /* AuthenticationYahooAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationYahooAPIData.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		ADCA748B235B82720093E032 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AD7C12CD235C39CF0072F2E4 /* UITableView+EmptyMessage.swift */,
 				ADCA748C235B82820093E032 /* Date+Extension.swift */,
 			);
 			path = Extensions;
@@ -321,6 +324,7 @@
 				AD9F298F2356F60B002DA153 /* SceneDelegate.swift in Sources */,
 				ADCA7489235B7F4F0093E032 /* WeatherEntity+CoreDataProperties.swift in Sources */,
 				ADCA748D235B82820093E032 /* Date+Extension.swift in Sources */,
+				AD7C12CE235C39CF0072F2E4 /* UITableView+EmptyMessage.swift in Sources */,
 				AD7E3A82235B490B00646BC0 /* AuthenticationYahooAPIData.swift in Sources */,
 				AD9F29A42356FEEE002DA153 /* MainViewController.swift in Sources */,
 				AD0E961D235B87E7003D7DBC /* HistoryTableViewController.swift in Sources */,

@@ -23,6 +23,7 @@ class MainViewController: UIViewController {
     @IBOutlet private var showWeatherButton: UIButton!
     
     // MARK: - Properties
+    private let weatherViewControllerSegue = "showWeatherViewController"
     private let locationServiceDispatchGroup = DispatchGroup()
     private var locationService: LocationService?
     
@@ -141,7 +142,7 @@ extension MainViewController {
 extension MainViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? WeatherViewController,
-            segue.identifier == "showWeatherViewController" else { return }
+            segue.identifier == weatherViewControllerSegue else { return }
         
         destination.street = street
         destination.currentLatitude = latitude

@@ -12,9 +12,11 @@ import CoreData
 @available(iOS 10.0, *)
 class HistoryTableViewController: UITableViewController {
     
+    // MARK: - Properties
     private var fetchedResultsController: NSFetchedResultsController<WeatherEntity>?
     private let cellIdentifier = "weatherRequestCell"
     
+    // MARK: - UIViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFetchedResultsController()
@@ -25,9 +27,12 @@ class HistoryTableViewController: UITableViewController {
         fetchWeatherRequestHistory()
     }
     
+    // MARK: - UITableViewDataSource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sections = fetchedResultsController?.sections else { return 0 }
-        return sections[section].numberOfObjects
+        let numberOfRows = sections[section].numberOfObjects
+        if numberOfRows == 0 { tableView.setEmptyMessage("   No weather request history found.   ") }
+        return numberOfRows
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,6 +50,7 @@ class HistoryTableViewController: UITableViewController {
 }
 
 @available(iOS 10.0, *)
+// MARK: - CoreData Methods
 extension HistoryTableViewController: NSFetchedResultsControllerDelegate {
     func setupFetchedResultsController() {
         

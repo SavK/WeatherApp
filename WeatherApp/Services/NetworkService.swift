@@ -9,6 +9,7 @@
 import Foundation
 
 final class NetworkService {
+    
     static func decodeJSON<T: Decodable> (from data: Data,
                               complition: @escaping (_ decodedData: T?) -> ()) {
         do {
